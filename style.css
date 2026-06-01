@@ -65,7 +65,7 @@ nav .call-btn {
 /* Hero Section Responsive Configs */
 .hero {
     min-height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://unsplash.com') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.search.yahoo.com/search/images;_ylt=AwrOofqXUB1qOgIAxGVXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Nj?type=E210US91215G0&p=pizza+and+burger+image&fr=mcafee&th=474&tw=474&imgurl=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20241203%2Fpngtree-pizza-burger-fastfood-image_16725769.jpg&rurl=https%3A%2F%2Fpngtree.com%2Ffreebackground%2Fpizza-burger-fastfood_16081960.html&size=251KB&name=Pizza+Burger+Fastfood+Background%2C+Pizza+Burger%2C+Fast+Food%2C+Burger+Background+Image+And+Wallpaper+...&oid=25&h=640&w=640&turl=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.Xie5CeIqWCqFViwgoot48gHaHa%3Fpid%3DApi&tt=Pizza+Burger+Fastfood+Background%2C+Pizza+Burger%2C+Fast+Food%2C+Burger+Background+Image+And+Wallpaper+...&sigr=NuV6wZxBDbku&sigit=pBmFKqF.zfoO&sigi=iHEOahneST1w&sign=bnezDzFwSkdT&sigt=bnezDzFwSkdT') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
