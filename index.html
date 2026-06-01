@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispo - Mood Bana Da | Order Online</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">CRISPO<span>.</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="tel:03065983922" class="call-btn"><i class="fa-solid fa-phone"></i> 0306-5983922</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="slogan">Mood Bana Da!</span>
+            <h1>Super Delicious Pizza & Burgers</h1>
+            <p>Get your favorite fast food delivered hot & fresh right to your doorstep for free.</p>
+            <div class="badges">
+                <span><i class="fa-solid fa-truck"></i> Free Delivery</span>
+                <span><i class="fa-solid fa-clock"></i> 10:00 AM - 02:00 PM</span>
+            </div>
+            <a href="#menu" class="cta-btn">Order Online Now 🍔</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Our Menu</h2>
+        <div class="menu-container">
+            <!-- Item 1: Pizza -->
+            <div class="menu-card">
+                <div class="card-img pizza-img"></div>
+                <div class="card-info">
+                    <h3>Super Delicious Pizza</h3>
+                    <p>Loaded with premium cheese, fresh toppings, and our secret Crispo sauce.</p>
+                    <div class="order-controls">
+                        <select id="pizza-size">
+                            <option value="Small - Rs. 550">Small - Rs. 550</option>
+                            <option value="Medium - Rs. 950">Medium - Rs. 950</option>
+                            <option value="Large - Rs. 1450">Large - Rs. 1450</option>
+                        </select>
+                        <button onclick="addToCart('Super Delicious Pizza', 'pizza-size')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Burger -->
+            <div class="menu-card">
+                <div class="card-img burger-img"></div>
+                <div class="card-info">
+                    <h3>Premium Crispy Burger</h3>
+                    <p>Juicy crispy chicken fillet with fresh lettuce and melting cheese mayo.</p>
+                    <div class="order-controls">
+                        <select id="burger-type">
+                            <option value="Single Patty - Rs. 350">Single Patty - Rs. 350</option>
+                            <option value="Double Cheese - Rs. 520">Double Cheese - Rs. 520</option>
+                        </select>
+                        <button onclick="addToCart('Premium Crispy Burger', 'burger-type')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Footer Block -->
+    <div id="cart-bar" class="cart-bar hidden">
+        <div class="cart-details">
+            <p id="cart-summary"></p>
+        </div>
+        <button onclick="openCheckoutModal()" class="checkout-btn">Proceed To Checkout 🛒</button>
+    </div>
+
+    <!-- Checkout Modal / Form Popup -->
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Delivery Details</h3>
+            <input type="text" id="cust-name" placeholder="Your Full Name" required>
+            <input type="tel" id="cust-phone" placeholder="WhatsApp / Phone Number" required>
+            <textarea id="cust-address" placeholder="Complete Delivery Address" required></textarea>
+            <div class="modal-actions">
+                <button onclick="closeCheckoutModal()" class="cancel-btn">Cancel</button>
+                <button onclick="sendOrder()" class="submit-btn"><i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
