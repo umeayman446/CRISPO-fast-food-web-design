@@ -1,5 +1,4 @@
 /* Styling Rules */
-
 :root {
     --primary-color: #ff3838;
     --secondary-color: #ffb300;
@@ -18,89 +17,99 @@
 body {
     background-color: var(--light-color);
     color: var(--dark-color);
+    -webkit-tap-highlight-color: transparent;
 }
 
-
-/* Navbar */
-
+/* Navbar Responsive Setup */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 15px 5%;
     background: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 800;
     color: var(--dark-color);
     letter-spacing: 1px;
 }
-
-.logo span {
-    color: var(--primary-color);
-}
+.logo span { color: var(--primary-color); }
 
 nav a {
     text-decoration: none;
     color: var(--dark-color);
-    margin-left: 20px;
+    margin-left: 15px;
     font-weight: 600;
+    font-size: 14px;
 }
-
 nav .call-btn {
     background: var(--primary-color);
     color: white;
-    padding: 8px 15px;
+    padding: 6px 12px;
     border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
 }
 
+@media (max-width: 480px) {
+    .navbar { padding: 15px 4%; }
+    nav a:not(.call-btn) { display: none; } /* Mobile par extra links hide ho jayenge, sirf call button dikhega */
+}
 
-/* Hero Section */
-
+/* Hero Section Responsive Configs */
 .hero {
-    height: 70vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://tse4.mm.bing.net/th/id/OIP.Na5JzmEh3lNVbxrnFtQvRgHaEP?pid=Api&h=220&P=0') center/cover;
+    min-height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://unsplash.com') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 0 20px;
+    padding: 40px 20px;
 }
 
 .slogan {
     background: var(--secondary-color);
     color: var(--dark-color);
-    padding: 5px 15px;
+    padding: 4px 12px;
     font-weight: 700;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 .hero h1 {
-    font-size: 45px;
+    font-size: 28px;
     margin: 15px 0;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 15px;
     max-width: 600px;
-    margin: 0 auto 25px auto;
+    margin: 0 auto 20px auto;
+    opacity: 0.9;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .badges span {
-    margin: 0 10px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255,255,255,0.2);
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .cta-btn {
@@ -109,99 +118,80 @@ nav .call-btn {
     background: var(--primary-color);
     color: white;
     text-decoration: none;
-    padding: 12px 30px;
+    padding: 10px 25px;
     font-weight: 700;
     border-radius: 30px;
+    font-size: 15px;
     transition: 0.3s;
 }
 
-.cta-btn:hover {
-    transform: scale(1.05);
+@media (min-width: 768px) {
+    .hero { height: 70vh; }
+    .hero h1 { font-size: 45px; }
+    .hero p { font-size: 18px; }
+    .badges span { font-size: 14px; }
 }
 
-
-/* Menu Section */
-
-.menu-section {
-    padding: 60px 5%;
-    text-align: center;
-}
-
-.menu-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
+/* Menu Section Responsive Layout */
+.menu-section { padding: 40px 5%; text-align: center; }
+.menu-section h2 { font-size: 28px; margin-bottom: 30px; }
 
 .menu-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+    gap: 25px;
     justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .menu-container { grid-template-columns: 1fr; } /* Mobile par card full screen width le ga single column mien */
 }
 
 .menu-card {
     background: white;
-    width: 320px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
 }
 
-.card-img {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
+.card-img { height: 200px; background-size: cover; background-position: center; }
+.pizza-img { background-image: url('https://unsplash.com'); }
+.burger-img { background-image: url('https://unsplash.com'); }
 
-.pizza-img {
-    background-image: url('https://tse2.mm.bing.net/th/id/OIP.f93iQiXgkkOqfkOIPEjuCAHaET?pid=Api&h=220&P=0');
-}
-
-.burger-img {
-    background-image: url('https://tse4.mm.bing.net/th/id/OIP.EI2uAwcP3KSZCxaI6lpd0QHaFM?pid=Api&h=220&P=0');
-}
-
-.card-info {
-    padding: 20px;
-    text-align: left;
-}
-
-.card-info h3 {
-    margin-bottom: 10px;
-}
-
-.card-info p {
-    font-size: 14px;
-    color: #666;
-    height: 45px;
-    margin-bottom: 15px;
-}
+.card-info { padding: 20px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
+.card-info h3 { font-size: 18px; margin-bottom: 8px; }
+.card-info p { font-size: 14px; color: #666; margin-bottom: 15px; line-height: 1.4; }
 
 .order-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .order-controls select {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 13px;
+    flex-grow: 1;
 }
 
 .order-controls button {
     background: var(--dark-color);
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 9px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
-
-/* Cart Sticky Bar */
-
+/* Cart Sticky Bar Mobile Optimization */
 .cart-bar {
     position: fixed;
     bottom: 0;
@@ -210,13 +200,14 @@ nav .call-btn {
     background: var(--dark-color);
     color: white;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
     padding: 15px 5%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
     z-index: 99;
 }
-
+.cart-details p { font-size: 13px; text-align: center; }
 .checkout-btn {
     background: var(--secondary-color);
     color: var(--dark-color);
@@ -225,68 +216,49 @@ nav .call-btn {
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    font-size: 14px;
 }
 
+@media (min-width: 576px) {
+    .cart-bar { flex-direction: row; justify-content: space-between; }
+    .checkout-btn { width: auto; }
+    .cart-details p { font-size: 15px; text-align: left; }
+}
 
-/* Modal Popup */
-
+/* Modal Popup Engine Setup */
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.75);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    padding: 15px;
 }
 
 .modal-content {
     background: white;
-    padding: 30px;
-    border-radius: 10px;
-    width: 90%;
+    padding: 25px;
+    border-radius: 12px;
+    width: 100%;
     max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.modal-content h3 {
-    margin-bottom: 20px;
-}
-
-.modal-content input,
-.modal-content textarea {
+.modal-content h3 { margin-bottom: 15px; font-size: 18px; }
+.modal-content input, .modal-content textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
-.modal-actions {
-    display: flex;
-    justify-content: space-between;
-}
+.modal-actions { display: flex; justify-content: space-between; gap: 10px; }
+.cancel-btn { background: #e2e8f0; border:none; padding:10px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 35%; font-size: 14px; }
+.submit-btn { background: #25D366; color:white; border:none; padding:10px 15px; border-radius: 6px; cursor: pointer; font-weight:600; width: 65%; font-size: 14px; }
 
-.cancel-btn {
-    background: #ccc;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.submit-btn {
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.hidden {
-    display: none !important;
-}
+.hidden { display: none !important; }
